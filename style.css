@@ -1,0 +1,108 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+input {
+    padding-left: 10px;
+    height: 25px;
+    width: 250px;
+}
+body{
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(21, 21, 21);
+}
+.section__game{
+    display: flex;
+    background-color: aliceblue;
+    width: auto;
+    height: auto;
+    padding: 20px 40px;
+}
+.section__one{
+    width: 50%;
+}
+.section__error{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 50%;
+
+    font-size: 30px;
+}
+#word-display {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+#letters-guessed {
+    margin-bottom: 10px;
+}
+
+/*  */
+.modal__guessWord{
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 100%;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.815);
+
+    color: aliceblue;
+
+    gap: 25px;
+}
+.modal_div_button{
+    display: flex;
+    gap: 15px;
+}
+.button__modal {
+    width: auto;
+    height: auto;
+    padding: 5px 22px;
+
+    border-radius: 10px;
+
+    color: aliceblue;
+
+    cursor: pointer;
+}
+.button__modal:hover{
+    opacity: 0.8;
+}
+.b__y{
+    background-color: rgb(9, 106, 45);
+}
+.b__n{
+    background-color: brown;
+}
+.b__r {
+    background-color: rgb(190, 170, 16);
+}
+
+/*  */
+
+.modal_congratulations{
+    position: absolute;
+    background-image: url("./assets/congratulations.gif");
+    background-repeat: no-repeat;
+    background-position: center;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.831);
+    color: aliceblue;
+
+
+    top: 0;
+}

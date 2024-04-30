@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Jogo de Forca</title>
+</head>
+<body>
+    <section class="section__game">
+        <section class="section__one">
+            <h1>Jogo de Forca</h1>
+            <div id="word-display"></div>
+            <div id="letters-guessed"></div>
+            <div>
+                <label for="guess">Digite uma letra:</label>
+                <input type="text" id="guess" maxlength="1">
+                <button id="button_run">Adivinhar</button>
+            </div>
+        </section>
+
+        <section class="section__error">
+            <p>Erros:</p>
+            <span id="error_Attempts">0</span>
+        </section>
+    </section>
+
+    <div class="modal__guessWord">
+        <h1>Quer adivinhar a palavra?</h1>
+        <p class="modal_words"></p>
+        <input type="text" id="input_modal_guess_word">
+        <div class="modal_div_button">
+            <button class="button__modal b__n">Não</button>
+            <button class="button__modal b__r">Tentar</button>
+        </div>
+    </div>
+
+    <div class="modal_congratulations">
+        <h1>Parabéns</h1>
+        <p class="modal_word_congractulation">
+            Voce acertou a palav ra correta!
+        </p>
+    </div>
+
+    <script type="module" src="./script.js"></script>
+</body>
+</html>
