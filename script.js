@@ -4,6 +4,8 @@ import words from "./words.js";
 // Escolhendo uma palavra aleatoriamente
 let word = words[Math.floor(Math.random() * words.length)];
 
+console.log(word);
+
 let displayWord = "";
 let guessedLetters = [];
 let guessedErros = [];
@@ -71,7 +73,7 @@ function guessLetter() {
 
     
     clearInput();
-    manageAttempts();
+    // manageAttempts();
     // Verificar se o jogador quer adivinhar a palavra
     guessWord();
 }
@@ -82,13 +84,13 @@ function reloadPage () {
 function clearInput() {
     document.getElementById("guess").value = "";
 }
-function manageAttempts () {
-    if(guessedErros.length === 5) {
-        alert("Você ultrapassou a quantidade de tentativas. Lamento, você perdeu!");
-        reloadPage();
-        return
-    }
-}
+// function manageAttempts () {
+//     if(guessedErros.length === 5) {
+//         alert("Você ultrapassou a quantidade de tentativas. Lamento, você perdeu!");
+//         reloadPage();
+//         return
+//     }
+// }
 function guessWord () {
     const wordDisplay = document.getElementById("word-display").innerText;
     const correctLetters = wordDisplay.split(' ').filter(strings => strings !== "_").length;
@@ -116,6 +118,17 @@ button_R.addEventListener("click", ()=>{
         modalGuessWord.style.display = "none";
         modalCongractulation();
         return;
+    };
+    if(modalInputGuessWord !== word){
+        const modalGuessWord = document.querySelector(".modal__guessWord");
+        modalGuessWord.style.display = "none";
+        const modalErro = document.querySelector(".modal_erro");
+        modalErro.style.display = 'flex';
+
+        setTimeout(()=>{
+            modalErro.style.display = 'none';
+            modalGuessWord.style.display = "flex";
+        }, 2000)
     }
 })
 
@@ -125,3 +138,9 @@ function modalCongractulation () {
     let messege = document.querySelector(".modal_word_congractulation").innerText;
     messege = "Parabéns, você ganhou! A palavra era: " + word;
 }
+
+const button_reload = document.querySelector(".b__reload");
+
+button_reload.addEventListener("click", ()=>{
+    reloadPage();
+});
