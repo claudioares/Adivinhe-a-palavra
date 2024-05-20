@@ -1,4 +1,4 @@
-# Jogo de Forca em JavaScript
+# Adivinhe a palavra
 
 Este é um simples jogo de forca implementado em JavaScript. O jogo permite que o jogador adivinhe letras para tentar adivinhar a palavra oculta.
 
