@@ -73,7 +73,7 @@ function guessLetter() {
 
     
     clearInput();
-    // manageAttempts();
+    manageAttempts();
     // Verificar se o jogador quer adivinhar a palavra
     guessWord();
 }
@@ -84,13 +84,13 @@ function reloadPage () {
 function clearInput() {
     document.getElementById("guess").value = "";
 }
-// function manageAttempts () {
-//     if(guessedErros.length === 5) {
-//         alert("Você ultrapassou a quantidade de tentativas. Lamento, você perdeu!");
-//         reloadPage();
-//         return
-//     }
-// }
+function manageAttempts () {
+    if(guessedErros.length === 5) {
+        alert("Você ultrapassou a quantidade de tentativas. Lamento, você perdeu!");
+        reloadPage();
+        return
+    }
+}
 function guessWord () {
     const wordDisplay = document.getElementById("word-display").innerText;
     const correctLetters = wordDisplay.split(' ').filter(strings => strings !== "_").length;
